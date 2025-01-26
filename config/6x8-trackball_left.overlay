@@ -1,4 +1,4 @@
-#include "6x8-trackball.dtsi"
+#include "6x8_trackball.dtsi"
 
 &kscan0 {
      col-gpios
