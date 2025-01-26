@@ -1,8 +1,8 @@
+#include "6x8-trackball.dtsi"
+
 &default_transform { // Offset of 3 because the left side has 8 columns
     col-offset = <8>;
 };
-
-#include "6x8-trackball.dtsi"
 
 &kscan0 {
      col-gpios
