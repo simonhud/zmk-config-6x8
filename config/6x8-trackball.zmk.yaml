@@ -1,0 +1,8 @@
+
+file_format: "1"
+id: 6x8-trackball
+name: 6x8-trackball
+type: split
+requires: [nice_nano_v2]
+features:
+  - keys
