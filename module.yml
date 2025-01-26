@@ -1,4 +1,4 @@
-name: zmk-keyboards-6x8-trackball
+name: zmk-keyboards-6x8_trackball
 build:
   settings:
     board_root: "."
