@@ -2,6 +2,8 @@
     col-offset = <8>;
 };
 
+#include "6x8-trackball.dtsi"
+
 &kscan0 {
      col-gpios
          = <&xiao_d 21 GPIO_ACTIVE_HIGH>
