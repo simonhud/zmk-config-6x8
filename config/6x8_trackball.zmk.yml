@@ -1,0 +1,11 @@
+
+file_format: "1"
+id: 6x8_trackball
+name: 6x8_trackball
+type: split
+requires: [nice_nano_v2]
+features:
+  - keys
+siblings:
+  - 6x8_trackball_left
+  - 6x8_trackball_right
