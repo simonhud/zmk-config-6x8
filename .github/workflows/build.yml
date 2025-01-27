@@ -2,7 +2,8 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-  - name: build firmware
-    run: |
+    steps:
+      uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    - name: build firmware
+      run: |
         west build -s zmk/app -d build -b nice_nano_v2 -- -DBOARD_ROOT=${{ github.workspace }}/config -DZMK_CONFIG=${{ github.workspace }}/config -DSHIELD=6x8_trackball
