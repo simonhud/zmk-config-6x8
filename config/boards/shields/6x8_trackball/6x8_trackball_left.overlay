@@ -1,4 +1,4 @@
-#include "6x8_trackball.dts"
+#include <boards/shields/6x8_trackball/6x8_trackball.dts>
 
 &kscan0 {
      col-gpios
