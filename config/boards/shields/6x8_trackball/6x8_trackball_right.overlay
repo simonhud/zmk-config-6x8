@@ -1,4 +1,4 @@
-#include "6x8_trackball.dtsi"
+#include "6x8_trackball.dts"
 
 &default_transform { // Offset of 3 because the left side has 8 columns
     col-offset = <8>;
