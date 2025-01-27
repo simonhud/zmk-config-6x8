@@ -1,15 +1,15 @@
-if SHIELD_MY_KEYBOARD_LEFT
+if SHIELD_6X8_TRACKBALL_LEFT
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "6x8-Trackball"
+    default "6x8_Trackball"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_6X8-TRACKBALL_LEFT || SHIELD_6X8-TRACKBALL_RIGHT
+if SHIELD_6X8_TRACKBALL_LEFT || SHIELD_6X8_TRACKBALL_RIGHT
 
 config ZMK_SPLIT
     default y
