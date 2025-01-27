@@ -1,7 +1,0 @@
-# No whitespace after the comma or in your part name!
-config SHIELD_6X8-TRACKBALL_LEFT
-    def_bool $(shields_list_contains,6x8-trackball_left)
-
-# No whitespace after the comma or in your part name!
-config SHIELD_6X8-TRACKBALL_RIGHT
-    def_bool $(shields_list_contains,6x8-trackball_right)
