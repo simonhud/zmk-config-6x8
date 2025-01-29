@@ -43,7 +43,7 @@
 // |  mac3 |  CTRL |  A  |  S  |  D   |  F   |  G   |   [   |    |   ]   |  H   |  J    |  K    |  L    |   ;   |   @   |   #  |
 // |   |   | SHIFT |  Z  |  X  |  C   |  V   |  B   |                    |  N   |  M    |  ,    |  .    |   /   | SHIFT | RCTRL|
 //                       | ALT | GUI  |                                                 | LAY2  | LAY3  | 
-//                                    | SPACE | LOWER | LAY1 |           | LAY1 |       |  RET  |
+//                                    | SPACE | LOWER | LAY1 |           | LAY1 |       |  LAY1 |
 //                                            | SPACE | RAISE|               | BSPC  |  BKSP |
 //                                       
 
@@ -70,24 +70,50 @@
 // |  mac3 |  CTRL |  A  |  R  |  S   |  T   |  G   |   [   |    |   ]   |  M   |  N    |  E    |  I    |   O   |   @   |   #  |
 // |   |   | SHIFT |  Z  |  X  |  C   |  D   |  V   |                    |  K   |  H    |  ,    |  .    |   /   | SHIFT | RCTRL|
 //                       | ALT | GUI  |                                                 | LAY2  | LAY3  | 
-//                                    | SPACE | LOWER | LAY1 |           | LAY1 |       |  RET  |
+//                                    | SPACE | LOWER | LAY1 |           | LAY1 |       |  LAY1 |
 //                                            | SPACE | RAISE|               | BSPC  |  BKSP |
 //                                       
 
             bindings = <
-&kp ESC              &trans    &trans &kp F3   &kp F4   &kp F5    &kp F6             &kp ESC    &kp F7  &kp F8   &kp F9    &kp F10   &kp F11  &kp F12   &kp RET
-&kp A                &trans    &trans &trans   &trans   &trans    &trans             &kp Y      &kp N6  &kp N7   &kp N8    &kp N9    &kp N0   &kp MINUS &kp EQUAL
-&kp B                &kp TAB   &kp Q  &kp W    &kp F    &kp P     &kp B     &kp P    &kp W      &kp J   &kp L    &kp U     &kp Y     &kp SEMI &kp LBKT  &kp RBKT
-&kp C                &kp LCTRL &kp A  &kp R    &kp S    &kp T     &kp G     &kp RBKT &kp RBKT   &kp M   &kp N    &kp E     &kp I     &kp O    &kp SQT   &kp NUHS
-&kp NON_US_BACKSLASH &kp LSHFT &kp Z  &kp X    &kp C    &kp D     &kp V                         &kp K   &kp H    &kp COMMA &kp DOT   &kp FSLH &kp RSHFT &kp RCTRL
-                                      &kp LALT &kp LGUI                                                          &kp RET   &kp RGUI
-                                                        &kp SPACE &kp W     &kp R               &kp N1           &kp N2
-                                                                  &kp SPACE &kp Y                   &kp BSPC  &kp N4
+&trans               &trans    &trans &trans   &trans   &trans    &trans             &trans     &trans  &trans   &trans    &trans    &trans   &trans    &trans
+&trans               &trans    &trans &trans   &trans   &trans    &trans             &trans     &trans  &trans   &trans    &trans    &trans   &trans    &trans
+&trans               &trans    &kp Q  &kp W    &kp F    &kp P     &kp B     &trans   &trans     &kp J   &kp L    &kp U     &kp Y     &kp SEMI &trans    &trans
+&trans               &trans    &kp A  &kp R    &kp S    &kp T     &kp G     &trans   &trans     &kp M   &kp N    &kp E     &kp I     &kp O    &trans    &trans
+&trans               &trans    &kp Z  &kp X    &kp C    &kp D     &kp V                         &kp K   &kp H    &trans    &trans    &trans   &trans    &trans
+                                      &trans   &trans                                                            &trans    &trans
+                                                        &trans    &trans    &trans              &trans           &trans
+                                                                  &trans    &trans                  &trans   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 
+        raise_1 {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |  F1   |  F2 |  F3 |  F4  |  F5  |  F6  |            |  ESC  | F7   |  F8   |  F9   | F10   |  F11  |  F12  | RET  |
+// |  mac1 |  grv  |  1  |  2  |  3   |  4   |  5   |            |       |  6   |  7    |  8    |  9    |   0   |   -   |   +  |
+// |  mac2 |  TAB  |  Q  |  W  |  F   |  P   |  B   |   {   |    |   }   |  L   |  L    |  U    |  Y    |   :   |   [   |   ]  |
+// |  mac3 |  CTRL |  A  |  R  |  S   |  T   |  G   |   [   |    |   ]   | HOME |  <    |  ^    |  v    |   >   |  END  |   #  |
+// |   |   | SHIFT |  Z  |  X  |  C   |  D   |  V   |                    |  K   |  H    |  ,    |  .    |   /   | SHIFT | RCTRL|
+//                       | ALT | GUI  |                                                 | LAY2  | LAY3  | 
+//                                    | SPACE | LOWER | LAY1 |           | LAY1 |       |  LAY1 |
+//                                            | RET   | RAISE|               | BSPC  |  BKSP |
+//                                       
+
+            bindings = <
+&trans               &trans    &trans &trans   &trans   &trans    &trans             &trans     &trans    &trans   &trans    &trans    &trans    &trans    &trans
+&trans               &trans    &trans &trans   &trans   &trans    &trans             &trans     &trans    &trans   &trans    &trans    &trans    &trans    &trans
+&trans               &trans    &trans &trans   &trans   &trans    &trans    &trans   &trans     &trans    &trans   &trans    &trans    &trans    &trans    &trans
+&trans               &trans    &trans &trans   &trans   &trans    &trans    &trans   &trans     &kp HOME  &kp LEFT &kp UP    &kp DOWN  &kp RIGHT &kp END   &trans
+&trans               &trans    &trans &trans   &trans   &kp DEL   &trans                        &trans    &trans   &trans    &trans    &trans    &trans    &trans
+                                      &trans   &trans                                                              &trans    &trans
+                                                        &trans    &trans    &trans              &trans             &trans
+                                                                  &RET      &trans                  &trans   &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+    };
 
 };
