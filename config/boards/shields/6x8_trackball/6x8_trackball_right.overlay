@@ -44,6 +44,18 @@
   };
 };
 
+&nice_view_pins {
+    cs: <D1 / P0.06>,
+    scl: <D2 / P0.17>,
+    mosi: <D3 / P0.20>,
+}
+
+&spi {
+    cs: &nice_view_pins.cs,
+    scl: &nice_view_pins.scl,
+    mosi: &nice_view_pins.mosi,
+
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
