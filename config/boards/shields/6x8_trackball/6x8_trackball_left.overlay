@@ -35,17 +35,17 @@
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 1, 7)>,    // Set P1.07 as MOSI
-                    <NRF_PSEL(SPIM_SCK, 1, 2)>,     // Set P1.02 as SCK
-                    <NRF_PSEL(SPIM_MISO, 1, 1)>;   // Set P1.01 as MISO
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>,    // Set P0.20 (D3) as MOSI
+                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK
+                    <NRF_PSEL(SPIM_MISO, 0, 8)>;     // Set P0.08 (D0) as MISO
         };
     };
     
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 1, 7)>,    // Set P1.07 as MOSI
-                    <NRF_PSEL(SPIM_SCK, 1, 2)>,     // Set P1.02 as SCK
-                    <NRF_PSEL(SPIM_MISO, 1, 1)>;    // Set P1.01 as MISO
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>,    // Set P0.20 (D3) as MOSI
+                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK
+                    <NRF_PSEL(SPIM_MISO, 0, 8)>;     // Set P0.08 (D0) as MISO
             low-power-enable;
         };
     };
