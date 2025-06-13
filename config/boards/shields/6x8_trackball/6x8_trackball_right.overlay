@@ -1,6 +1,6 @@
 #include "6x8_trackball.dts"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-CONFIG_PMW3610_INIT_POWER_UP_EXTRA_DELAY_MS=1000
+
 / {
     chosen {
         zmk,kscan = &kscan;
