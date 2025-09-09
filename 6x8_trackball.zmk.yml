@@ -6,6 +6,7 @@ type: split
 requires: [nice_nano_v2]
 features:
   - keys
+  - pointer
 siblings:
   - 6x8_trackball_left
   - 6x8_trackball_right
