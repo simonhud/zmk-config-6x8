@@ -73,7 +73,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;             // NCS D1 (P0.06)
 
-    trackball: trackball@0 {
+    trackball: trackball@ {
         status = "disabled";
         compatible = "pixart,pmw3610";
         reg = <0>;
