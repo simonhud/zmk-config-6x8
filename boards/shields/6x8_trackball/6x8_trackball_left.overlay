@@ -1,6 +1,4 @@
-#include "6x8_trackball.dts"
-#include <zephyr/dt-bindings/input/input-event-codes.h>
-
+#include "6x8_trackball.dtsi"
 / {
     chosen {
         zmk,kscan = &kscan;
@@ -33,47 +31,30 @@
             ;
     };
 };
-// Offset of 8 because the left side has 8 columns
-&default_transform { 
-    col-offset = <8>;
-    };
 
-/ &pinctrl {
+&pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>,     // Set P0.08 (D0) as MOSI or SDIO
-                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK or SCLK
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>,    // Set P0.20 (D3) as MOSI
+                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK
                     <NRF_PSEL(SPIM_MISO, 0, 8)>;     // Set P0.08 (D0) as MISO
         };
     };
     
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_MOSI, 0, 8)>,     // Set P0.20 (D0) as MOSI or SDIO
-                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK or SCLK
-                    <NRF_PSEL(SPIM_MISO, 0, 8)>;     // Set P0.20 (D0) as MISO
+            psels = <NRF_PSEL(SPIM_MOSI, 0, 20)>,    // Set P0.20 (D3) as MOSI
+                    <NRF_PSEL(SPIM_SCK, 0, 17)>,     // Set P0.17 (D2) as SCK
+                    <NRF_PSEL(SPIM_MISO, 0, 8)>;     // Set P0.08 (D0) as MISO
             low-power-enable;
         };
     };
 };
 
-&spi0 {
-    status = "disabled";
+nice_view_spi: &spi0 {
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;             // NCS D1 (P0.06)
-
-    trackball: trackball@ {
-        status = "disabled";
-        compatible = "pixart,pmw3610";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // MOT D3 (P0.20)
-        cpi = <3200>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
-    };
+    cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
 };
