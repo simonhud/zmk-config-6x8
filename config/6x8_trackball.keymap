@@ -20,10 +20,6 @@
 #define RAISE 3
 
 / {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        };
     behaviors {
         td0: colemak_dh_layer {
             compatible = "zmk,behavior-tap-dance";
