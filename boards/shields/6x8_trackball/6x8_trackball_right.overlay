@@ -1,6 +1,10 @@
 #include "6x8_trackball.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
+&default_transform {
+    col-offset = <8>;   // Offset of 8 because the left side has 8 columns
+};
+
 / {
     chosen {
         zmk,kscan = &kscan;
@@ -31,11 +35,6 @@
             , <&pro_micro 16 GPIO_ACTIVE_HIGH>
             , <&pro_micro 10 GPIO_ACTIVE_HIGH>
             ;
-    };
-};
-// Offset of 8 because the left side has 8 columns
-/ { &default_transform {
-    col-offset = <8>;
     };
 };
 / {
